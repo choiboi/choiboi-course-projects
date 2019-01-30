@@ -1,0 +1,17 @@
+/node_modules
+/dist/
+
+#Angular stuff.
+/bazel-out
+/integration/bazel/bazel-*
+e2e_test.*
+node_modules
+tools/gulp-tasks/cldr/cldr-data/
+
+#MAC files.
+.DS_Store
+
+# Ignore npm/yarn debug log
+npm-debug.log
+yarn-error.log
+
