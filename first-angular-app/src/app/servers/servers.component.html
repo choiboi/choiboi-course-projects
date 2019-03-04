@@ -1,10 +1,17 @@
 <app-server></app-server>
 <app-server></app-server>
 
+<!-- One way binding -->
 <input 
 	type="text"
 	class="form-control"
 	(input)="onUpdateServerName($event)"/>
+<br>
+<!-- Two way binding -->
+<input 
+	type="text"
+	class="form-control"
+	[(ngModel)]="serverName"/>
 <br>
 <p>{{ serverName }}</p>
 <br>

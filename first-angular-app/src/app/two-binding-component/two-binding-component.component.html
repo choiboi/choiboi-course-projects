@@ -1,0 +1,15 @@
+<input 
+	type="text"
+	class="form-control"
+	placeholder="Enter Username"
+	(input)="verifyUsername()"
+	[(ngModel)]="username"/>
+<br>
+<p>{{ username }}</p>
+<button
+	class="btn btn-primary"
+	[disabled]="!isUsernameValid"
+	(click)="submitUsername()"
+	style="margin-bottom: 40px;">
+	Verify Username
+</button>
