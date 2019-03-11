@@ -23,3 +23,9 @@
 </button>
 <p [innerText]="allowNewServers"></p>
 <p>{{ serverCreationStatus }}</p>
+<br>
+<!-- Databinding ngIf -->
+<p *ngIf="serverCreated; else noServer">Created new server called: {{ serverName }}</p>
+<ng-template #noServer>
+	<p>No server was created.</p>
+</ng-template>
