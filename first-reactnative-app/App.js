@@ -5,12 +5,10 @@ export default class App extends React.Component {
 
   startGame() {
     console.log('start');
-    alert('start');
   }
 
   showInstructions() {
     console.log('instructions');
-    alert('instructions');
   }
 
   render() {
