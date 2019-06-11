@@ -4,11 +4,6 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class MainScreen extends React.Component {
 
-  startGame() {
-    console.log(this);
-    this.props.navigation.navigate('Game');
-  }
-
   showInstructions() {
     console.log('instructions');
   }
@@ -20,11 +15,11 @@ class MainScreen extends React.Component {
 
         <Text 
           style={styles.button}
-          onPress={this.startGame} >
+          onPress={() => this.props.navigation.navigate('Game')} >
           START
         </Text>
         <Text style={styles.button}
-          onPress={this.showInstructions} >
+          onPress={() => this.props.navigation.navigate('Instructions')} >
           INSTRUCTIONS
         </Text>
       </View>
@@ -37,6 +32,16 @@ class GameScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Game Screen</Text>
+      </View>
+    );
+  }  
+}
+
+class InstructionScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Instruction Screen</Text>
       </View>
     );
   }  
@@ -62,7 +67,8 @@ const styles = StyleSheet.create({
 
 const NavData = {
   Main: { screen: MainScreen },
-  Game: { screen: GameScreen }
+  Game: { screen: GameScreen },
+  Instructions: { screen: InstructionScreen }
 };
 const MainNavigator = createAppContainer(createStackNavigator(NavData, { initialRouteName: 'Main' }));
 
