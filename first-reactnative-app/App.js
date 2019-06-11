@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-export default class App extends React.Component {
+class MainScreen extends React.Component {
 
   startGame() {
-    console.log('start');
+    console.log(this);
+    this.props.navigation.navigate('Game');
   }
 
   showInstructions() {
@@ -30,6 +32,16 @@ export default class App extends React.Component {
   }
 }
 
+class GameScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Game Screen</Text>
+      </View>
+    );
+  }  
+}
+
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
@@ -47,3 +59,15 @@ const styles = StyleSheet.create({
     marginBottom: 5
   }
 });
+
+const NavData = {
+  Main: { screen: MainScreen },
+  Game: { screen: GameScreen }
+};
+const MainNavigator = createAppContainer(createStackNavigator(NavData, { initialRouteName: 'Main' }));
+
+export default class App extends React.Component {
+  render() {
+    return <MainNavigator />;
+  }
+}
