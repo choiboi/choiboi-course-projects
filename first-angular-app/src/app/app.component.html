@@ -36,4 +36,17 @@
       <p [appBetterHighlight]="'yellow'" [defaultColor]="'green'">Style me with basic hightlight</p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p>There should nothing below this text and above hr.</p>
+      <div *appUnless="true">
+        <p>Testing out app unless custom directive.</p>
+      </div>
+      <hr>
+      <div *appUnless="false">
+        <p>Testing out app unless custom directive.</p>
+      </div>
+    </div>
+  </div>
 </div>
