@@ -3,7 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AccountComponent } from './account/account.component';
 import { HeaderComponent } from './header/header.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
@@ -28,7 +30,9 @@ import { UnlessDirective } from './unless/unless.directive';
     SuccessAlertComponent,
     TwoBindingComponentComponent,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
