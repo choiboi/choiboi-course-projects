@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
@@ -12,9 +13,14 @@ import { BasicHighlightDirective } from './basic-highlight/basic-highlight.direc
 import { BetterHighlightDirective } from './better-highlight/better-hightlight.directive';
 import { UnlessDirective } from './unless/unless.directive';
 
+/*
+ * Using Bootstrap 4.4.1
+ */
+
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     BasicHighlightDirective,
     ServerComponent,
     ServersComponent,
@@ -29,6 +35,6 @@ import { UnlessDirective } from './unless/unless.directive';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }
