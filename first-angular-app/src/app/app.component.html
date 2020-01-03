@@ -28,10 +28,12 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Custom directive: basic-hightlight</h2>
-      <p appBasicHightlight>Style me with basic hightlight</p>
+      <p appBasicHighlight>Style me with basic hightlight</p>
       <br>
       <h2>Custom directive: better-hightlight</h2>
-      <p appBetterHightlight>Style me with basic hightlight</p>
+      <p appBetterHighlight>Style me with basic hightlight</p>
+      <!-- <p appBetterHighlight [defaultColor]="'green'" [highlightColor]="'red'">Style me with basic hightlight</p> -->
+      <p [appBetterHighlight]="'yellow'" [defaultColor]="'green'">Style me with basic hightlight</p>
     </div>
   </div>
 </div>

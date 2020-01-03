@@ -8,19 +8,19 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { TwoBindingComponentComponent } from './two-binding-component/two-binding-component.component';
-import { BasicHightlightDirective } from './basic-highlight/basic-highlight.directive';
-import { BetterHightlightDirective } from './better-highlight/better-hightlight.directive';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-hightlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHightlightDirective,
+    BasicHighlightDirective,
     ServerComponent,
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
     TwoBindingComponentComponent,
-    BetterHightlightDirective
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
