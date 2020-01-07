@@ -11,9 +11,13 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { TwoBindingComponentComponent } from './two-binding-component/two-binding-component.component';
+
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-hightlight.directive';
 import { UnlessDirective } from './unless/unless.directive';
+
+import { AccountsService } from './services/accounts.service';
+import { LoggingService } from './services/logging.service';
 
 /*
  * Using Bootstrap 4.4.1
@@ -38,7 +42,7 @@ import { UnlessDirective } from './unless/unless.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
