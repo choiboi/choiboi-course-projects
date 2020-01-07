@@ -20,6 +20,7 @@ import { UnlessDirective } from './unless/unless.directive';
 
 import { AccountsService } from './services/accounts.service';
 import { LoggingService } from './services/logging.service';
+import { CounterService } from './assignment5/services/counter.service';
 
 /*
  * Using Bootstrap 4.4.1
@@ -46,7 +47,7 @@ import { LoggingService } from './services/logging.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, CounterService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
