@@ -11,6 +11,8 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { TwoBindingComponentComponent } from './two-binding-component/two-binding-component.component';
+import { ActiveUsersComponent } from './assignment5/active-users/active-users.component';
+import { InactiveUsersComponent } from './assignment5/inactive-users/inactive-users.component';
 
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-hightlight.directive';
@@ -36,7 +38,9 @@ import { LoggingService } from './services/logging.service';
     BetterHighlightDirective,
     UnlessDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
