@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { A3Component } from './assignment3/a3.component';
 import { AccountComponent } from './account/account.component';
 import { HeaderComponent } from './header/header.component';
 import { NewAccountComponent } from './new-account/new-account.component';
@@ -29,6 +30,7 @@ import { CounterService } from './assignment5/services/counter.service';
 @NgModule({
   declarations: [
     AppComponent,
+    A3Component,
     HeaderComponent,
     BasicHighlightDirective,
     ServerComponent,
