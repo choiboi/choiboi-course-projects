@@ -7,3 +7,7 @@
 npm-debug.log
 yarn-error.log
 
+# Prevent yarn lock being committed
+# as these are just course projects.
+yarn.lock
+
