@@ -10,6 +10,12 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <!-- this is relative path -->
+    <a routerLink="/servers">load /servers</a><br>
+    <!-- this is will try to load /servers/servers -->
+    <a routerLink="servers">load servers</a><br>
+    <!-- this is will try to load /servers/servers -->
+    <a routerLink="./servers">load ./servers</a>
     <app-edit-server></app-edit-server>
     <hr>
     <app-server></app-server>
