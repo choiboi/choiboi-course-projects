@@ -16,6 +16,7 @@
     <a routerLink="servers">load servers</a><br>
     <!-- this is will try to load /servers/servers -->
     <a routerLink="./servers">load ./servers</a>
+    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <app-edit-server></app-edit-server>
     <hr>
     <app-server></app-server>
