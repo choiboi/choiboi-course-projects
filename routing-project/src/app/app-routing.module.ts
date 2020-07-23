@@ -10,6 +10,8 @@ import { EditServerComponent } from "./servers/edit-server/edit-server.component
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AuthGuard } from "./auth-guard.service";
 import { CanDeactivateGuard } from "./servers/edit-server/can-deactivate-guard.service";
+import { ErrorPageComponent } from "./error-page/error-page.component";
+import { ServerResovler } from "./servers/server/server-resolver.service";
 
 const appRoutes: Routes = [
   {
@@ -31,24 +33,35 @@ const appRoutes: Routes = [
     canActivateChild: [ AuthGuard ],
     children: [
       {
-        path: ':id', component: ServerComponent
+        path: ':id',
+        component: ServerComponent,
+        resolve: { erver: ServerResovler }
       },
       {
         path: ':id/edit', component: EditServerComponent, canDeactivate: [ CanDeactivateGuard ]
       }
     ]
   },
+  // {
+  //   path: 'not-found', component: PageNotFoundComponent
+  // },
   {
-    path: 'not-found', component: PageNotFoundComponent
+    path: 'not-found',
+    component: ErrorPageComponent,
+    data: { message: 'Page not found - error component' }
   },
   {
     path: '**', redirectTo: 'not-found'
   }
 ];
 
+// useHash config adds /#/ in the url which lets your web server only
+// care about the ones before /#/. This allows the client side to make
+// use of without affecting the your web server.
+// Hash mode routing.
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
   ],
   exports: [
     RouterModule
