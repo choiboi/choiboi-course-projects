@@ -1,6 +1,7 @@
-/node_modules
+**/node_modules
+.env
 
-#MAC files.
+# MAC files.
 .DS_Store
 
 # Ignore npm/yarn debug log
@@ -10,4 +11,5 @@ yarn-error.log
 # Prevent yarn lock being committed
 # as these are just course projects.
 yarn.lock
+package-lock.
 
