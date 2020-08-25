@@ -5,12 +5,35 @@ const typeDefs = gql`
   These define queries that clients can execute against the graph.
   """
   type Query {
-    # Return an array of all upcoming Launches
-    launches: [Launch]!
+    """
+    Return an array of all upcoming Launches.
+
+    launches takes two paramters:
+    pageSize - return number of results, must be >= 1, default = 20
+    after - optional cursor, returns whatever __after__
+    and returns LaunchConnection type.
+    """
+    launches(
+      pageSize: Int,
+      after: String
+    ): LaunchConnection!
     # Return a single Launch that matches with the provided id argument.
     launch(id: ID!): Launch
     # Return details of the logged in user.
-    me: User 
+    me: User
+  }
+
+  """
+  Simple wrapper around our list of launches that contains a cursor to the last item
+  in the list. Pass this cursor to the launches query to fetch results after these.
+  """
+  type LaunchConnection {
+    # array of Launch.
+    launches: [Launch]!
+    # current position of data set
+    cursor: String!
+    # indicates if there are more data.
+    hasMore: Boolean!
   }
 
   """
@@ -57,7 +80,7 @@ const typeDefs = gql`
 
   type Mission {
     name: String
-    missionPath(size: PatchSize): String
+    missionPatch(size: PatchSize): String
   }
 
   enum PatchSize {
