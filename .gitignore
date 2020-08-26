@@ -12,4 +12,5 @@ yarn-error.log
 # as these are just course projects.
 yarn.lock
 package-lock.
+.env.example
 
