@@ -43,7 +43,7 @@ const typeDefs = gql`
     # Allows logged in users to booked multiple Launches.
     bookTrips(launchIds: [ID]!): TripUpdateResponse!
     # Allows logged in users to cancel previously booked trip.
-    cancelTrip(launch: ID!): TripUpdateResponse!
+    cancelTrips(launch: ID!): TripUpdateResponse!
     # Allows users to log in using their email.
     login(email: String): String
   }
