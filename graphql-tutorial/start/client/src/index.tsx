@@ -1,14 +1,19 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {
   ApolloClient,
   NormalizedCacheObject,
   ApolloProvider,
-  HttpLink
+  HttpLink,
+  gql,
+  useQuery
 } from '@apollo/client';
-import React from 'react';
-import ReactDOM from 'react-dom';
+
 import Pages from './pages';
+import Login from './pages/login';
 import injectStyles from './styles';
 import { cache } from './cache';
+import { resolvers, typeDefs } from './resolvers';
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
@@ -17,7 +22,9 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
     headers: {
       authorization: localStorage.getItem('token')
     }
-  })
+  }),
+  typeDefs,
+  resolvers
 });
 
 cache.writeData({
@@ -26,6 +33,17 @@ cache.writeData({
     cartItems: []
   }
 });
+
+const IS_LOGGED_IN = gql`
+  query IsUserLoggedIn {
+    isLoggedIn @client
+  }
+`;
+
+function isLoggedIn() {
+  const { data } = useQuery(IS_LOGGED_IN);
+  return data.isLoggedIn ? <Pages /> : <Login />;
+}
 
 injectStyles();
 ReactDOM.render(
